@@ -45,7 +45,7 @@ const DrugOrderPopUp = ({ show, handleClose }) => {
   return (
     <Modal show={show} onHide={handleClose} centered>
       <Modal.Header closeButton>
-        <Modal.Title>Upload Product</Modal.Title>
+        <Modal.Title>Place Order</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         {!message && (
