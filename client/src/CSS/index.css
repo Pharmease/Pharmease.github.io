@@ -49,6 +49,8 @@ body {
   text-align: center;
   padding: 40px 20px;
   background-color: #fff;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .intro h1 {
@@ -67,6 +69,8 @@ body {
 
 .services {
   padding: 60px 20px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .services .imgCol {
@@ -78,8 +82,8 @@ body {
 .services .imgCol img {
   width: 100%;
   max-width: 500px;
-  max-height: 400px; /* Added max-height */
-  object-fit: contain; /* Ensures the image scales proportionally */
+  max-height: 400px;
+  object-fit: contain;
   border-radius: 10px;
 }
 
@@ -165,6 +169,8 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .footer h3 {
@@ -295,171 +301,3 @@ body {
     transform: rotate(360deg);
   }
 }
-/*
-@media screen and (min-width: 768px) {
-  .navbar {
-    background-color: #e0e6e6;
-  }
-}
-
-@media screen and (max-width: 991px) {
-  .heading {
-    min-height: auto;
-    margin-bottom: 0;
-    padding-top: 20px;
-    padding-bottom: 100px;
-    margin-top: 40px;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .services .desCol p {
-    min-width: auto;
-    max-width: 90%;
-    margin-bottom: 40px;
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .services .desCol ul li {
-    min-width: auto;
-    max-width: 82%;
-    font-size: 16px;
-    line-height: 23px;
-  }
-
-  .services button {
-    padding: 16px 60px;
-  }
-
-  .outerCard {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-
-  .outerCard h2 {
-    color: #fff;
-    margin-top: 40px;
-    margin-bottom: 18px;
-    font-family: Gilroy, sans-serif;
-    font-size: 44px;
-    line-height: 52px;
-  }
-
-  .outerCard p {
-    margin-bottom: 24px;
-  }
-
-  .footer {
-    min-height: 40vh;
-    padding: 80px 40px 20px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .heading {
-    align-items: center;
-    margin-top: 100px;
-    padding: 60px 26px 40px;
-  }
-  .navbar {
-    position: sticky;
-    top: 0;
-  }
-
-  .services .imgCol {
-    min-width: 384px;
-  }
-
-  .services .desCol p {
-    text-align: left;
-    min-width: auto;
-    max-width: 94%;
-    font-size: 17px;
-    line-height: 26px;
-  }
-
-  .services .desCol ul li {
-    width: 100%;
-    min-width: auto;
-    max-width: none;
-    margin-bottom: 4px;
-    font-size: 15px;
-    line-height: 21px;
-  }
-
-  .outerCard {
-    flex-direction: column;
-    align-items: center;
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-
-  .outerCard h2 {
-    text-align: left;
-    min-width: auto;
-    max-width: none;
-    font-size: 38px;
-    line-height: 46px;
-  }
-
-  .outerCard p {
-    max-width: none;
-    font-size: 17px;
-  }
-
-  .footer {
-    padding-bottom: 20px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-
-@media screen and (max-width: 479px) {
-  .heading {
-    padding-bottom: 36px;
-    text-align: center;
-    width: auto;
-    margin-top: 0;
-    padding-top: 40px;
-    position: static;
-  }
-
-  .services .imgCol {
-    min-width: 320px;
-  }
-
-  .services .desCol p {
-    text-align: left;
-    min-width: auto;
-    margin-bottom: 10px;
-  }
-
-  .services .desCol ul li {
-    text-align: center;
-    align-self: auto;
-    width: auto;
-    margin-bottom: 0;
-  }
-
-  .outerCard {
-    padding-top: 40px;
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-
-  .outerCard h2 {
-    font-size: 32px;
-    line-height: 42px;
-  }
-
-  .outerCard p {
-    width: 94%;
-    min-width: auto;
-    text-align: left;
-  }
-
-  .footer {
-    padding: 40px 30px 20px 24px;
-  }
-} */
