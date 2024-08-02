@@ -116,7 +116,13 @@ const DrugOrderPopUp = ({ show, handleClose }) => {
           </Form>
         )}
         {message && (
-          <div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <h3>{message}</h3>
             <Button variant="primary" onClick={handleClose}>
               Okay
