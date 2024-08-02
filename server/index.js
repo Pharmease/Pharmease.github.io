@@ -1,13 +1,13 @@
 const express = require("express");
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
-const cors = require("cors"); // Import cors
+const cors = require("cors"); 
 const app = express();
 const port = process.env.PORT || 3001;
 
 app.use(
   cors({
-    origin: "*", // Replace with your React app's URL
+    origin: "*", 
   })
 );
 app.use(bodyParser.json());
@@ -17,17 +17,17 @@ app.post("/api/send-email", async (req, res) => {
 
   // Create a transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    service: "gmail", // you can use any email service
+    service: "gmail", 
     auth: {
-      user: process.env.EMAIL_USER, // your email
-      pass: process.env.EMAIL_PASSWORD, // your email password
+      user: process.env.EMAIL_USER, 
+           pass: process.env.EMAIL_PASSWORD, 
     },
   });
 
   // Set up email data
   let mailOptions = {
     from: "quickxmarket@gmail.com",
-    to: process.env.ADMIN_EMAIL, // admin email
+    to: process.env.ADMIN_EMAIL, 
     subject: "New Drugs Order Placed",
     text: `${Name} wants to order the following drugs:\n${Drugs}\nFrom:${Pharmacy}\nPhone Number${phoneNo}`,
   };
