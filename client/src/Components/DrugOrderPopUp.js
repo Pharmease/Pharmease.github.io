@@ -27,7 +27,7 @@ const DrugOrderPopUp = ({ show, handleClose }) => {
       process.env.REACT_APP_SERVER_URL || "http://localhost:3001";
 
     // Send form data to backend
-    const response = await fetch(`${serverUrl}api/send-email`, {
+    const response = await fetch(`${serverUrl}/api/send-email`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
