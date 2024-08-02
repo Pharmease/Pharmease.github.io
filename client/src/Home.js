@@ -36,7 +36,7 @@ const Home = () => {
             </p>
           </Col>
           <Col>
-            <Image src="images/download.jpeg" fluid />;
+            <Image src="images/download.jpeg" fluid />
           </Col>
         </Row>
       </div>
@@ -52,7 +52,7 @@ const Home = () => {
 
       <Row className="services" style={{ backgroundColor: "#F9F2FF" }}>
         <Col className="imgCol">
-          <img src="images/download.png"></img>
+          <img src="images/download.png" alt="Medication" />
         </Col>
         <Col className="desCol">
           <h2>Get medication seamlessly</h2>
@@ -67,7 +67,6 @@ const Home = () => {
             </li>
             <li>Get reminders and check-ins on your progress.</li>
           </ul>
-
           <Button variant="primary" onClick={handleDrugOrderShow}>
             ORDER NOW →
           </Button>
@@ -75,12 +74,12 @@ const Home = () => {
       </Row>
       <Row className="services" style={{ backgroundColor: "#e5fffd" }}>
         <Col className="imgCol">
-          <img src="images/download.png"></img>
+          <img src="images/download.png" alt="Consultation" />
         </Col>
         <Col className="desCol">
           <h2>Virtual consultation</h2>
           <p>
-            Get medication & supplement recommendations, health advice and our
+            Get medication & supplement recommendations, health advice, and our
             unwavering support.
           </p>
           <ul>
@@ -90,7 +89,6 @@ const Home = () => {
             </li>
             <li>Start optimizing your health journey.</li>
           </ul>
-
           <Button variant="primary">BOOK A SESSION →</Button>
         </Col>
       </Row>
@@ -105,7 +103,7 @@ const Home = () => {
             </p>
           </Col>
           <Col className="imageCol">
-            <Image src="images/download.jpeg" fluid />;
+            <Image src="images/download.jpeg" fluid />
           </Col>
         </Row>
       </div>
@@ -119,10 +117,11 @@ const Home = () => {
         </Col>
         <Col>
           <h3>Opening Hours</h3>
-          <p>Monday - Saturday, 8pm-6pm</p>
+          <p>Monday - Saturday, 8am-6pm</p>
           <p>Sunday, 1pm-6pm</p>
         </Col>
       </Row>
+
       <DrugOrderPopUp
         show={drugOrderShow}
         handleClose={handleDrugOrderClose}
