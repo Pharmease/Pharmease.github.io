@@ -2,12 +2,37 @@ import { Container, Row, Col, Button, Navbar } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import { useState } from "react";
 import DrugOrderPopUp from "./Components/DrugOrderPopUp";
+import RegisterPopUp from "./Components/RegisterPopUp";
+import UseVerifyUser from "./CustomUseHooks/UseVerifyUser";
+import { getAuth, signOut } from "./Components/firebase";
+import ChatPopUp from "./Components/ChatPopUp";
 
 const Home = () => {
   const [drugOrderShow, setDrugOrderShow] = useState(false);
+  const [registerShow, setRegisterShow] = useState(false);
+  const [ChatShow, setChatShow] = useState(false);
+  const { loggedIn, uid } = UseVerifyUser();
 
   const handleDrugOrderClose = () => setDrugOrderShow(false);
   const handleDrugOrderShow = () => setDrugOrderShow(true);
+
+  const handleRegisterClose = () => setRegisterShow(false);
+  const handleRegisterShow = () => setRegisterShow(true);
+
+  const handleChatClose = () => setChatShow(false);
+  const handleChatShow = () => setChatShow(true);
+
+  const handleLogOut = () => {
+    const auth = getAuth();
+    signOut(auth)
+      .then(() => {
+        localStorage.removeItem("details");
+      })
+      .catch((error) => {
+        // An error happened.
+        alert(error);
+      });
+  };
 
   return (
     <div>
@@ -21,9 +46,21 @@ const Home = () => {
                 width="30"
                 height="30"
                 className="d-inline-block align-top"
-              />{" "}
+              />
               Pharmease
             </Navbar.Brand>
+          </Container>
+          <Container style={{ display: "flex", justifyContent: "end" }}>
+            {!loggedIn && (
+              <p style={{ cursor: "pointer" }} onClick={handleRegisterShow}>
+                Login/Register
+              </p>
+            )}
+            {loggedIn && (
+              <p style={{ cursor: "pointer" }} onClick={handleLogOut}>
+                Logout
+              </p>
+            )}
           </Container>
         </Navbar>
         <Row className="heading">
@@ -89,7 +126,16 @@ const Home = () => {
             </li>
             <li>Start optimizing your health journey.</li>
           </ul>
-          <Button variant="primary">BOOK A SESSION →</Button>
+          {loggedIn && (
+            <Button variant="primary" onClick={handleChatShow}>
+              BOOK A SESSION →
+            </Button>
+          )}
+          {!loggedIn && (
+            <Button variant="primary" onClick={handleRegisterShow}>
+              BOOK A SESSION →
+            </Button>
+          )}
         </Col>
       </Row>
       <div className="cardContainer">
@@ -126,6 +172,17 @@ const Home = () => {
         show={drugOrderShow}
         handleClose={handleDrugOrderClose}
       ></DrugOrderPopUp>
+      <RegisterPopUp
+        show={registerShow}
+        handleClose={handleRegisterClose}
+      ></RegisterPopUp>
+      {loggedIn && (
+        <ChatPopUp
+          userId={uid}
+          show={ChatShow}
+          handleClose={handleChatClose}
+        ></ChatPopUp>
+      )}
     </div>
   );
 };

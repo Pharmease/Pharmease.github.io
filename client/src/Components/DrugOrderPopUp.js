@@ -121,6 +121,7 @@ const DrugOrderPopUp = ({ show, handleClose }) => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              flexDirection: "column",
             }}
           >
             <h3>{message}</h3>
