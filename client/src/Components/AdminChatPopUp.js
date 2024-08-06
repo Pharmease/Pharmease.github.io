@@ -1,15 +1,21 @@
-import React, { useState, useEffect, useRef, Container } from "react";
-import { Modal, Button, Form, Navbar } from "react-bootstrap";
+import React, { useState, useEffect, useRef } from "react";
+import { Modal, Button, Form, Navbar, Container } from "react-bootstrap";
 import { database, onValue, ref, push, set } from "./firebase";
-import ChatMessage from "./ChatMessage";
+import ChatMessage from "./AdminChatMessage";
 
-const ChatPopUp = ({ userId, show, handleClose }) => {
+const AdminChatPopUp = ({
+  adminId,
+  user,
+  setSelectedUser,
+  show,
+  handleClose,
+}) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const [username, setUsername] = useState(userId);
+  const [username, setUsername] = useState(user.name);
   const messagesEndRef = useRef(null);
 
-  const chatNode = `${userId}_${"Lmyt1TnogNOEEvUlGVGHzJ8FCnB3"}`;
+  const chatNode = `${user.id}_${adminId}`;
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -30,21 +36,21 @@ const ChatPopUp = ({ userId, show, handleClose }) => {
         setMessages(messagesList);
       },
       (error) => {
-        console.error("Error reading data:", error); // Log any errors
+        console.error("Error reading data:", error);
       }
     );
-  }, [chatNode]);
+  }, [chatNode, user]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const messagesRef = ref(database, `chats/${chatNode}/messages`);
     const newMessageRef = push(messagesRef);
     set(newMessageRef, {
-      sender: "user",
+      sender: "admin",
       text: message,
       timestamp: Date.now(),
-      senderId: userId,
-      receiverId: "Lmyt1TnogNOEEvUlGVGHzJ8FCnB3",
+      senderId: adminId,
+      receiverId: user.id,
     });
     setMessage("");
   };
@@ -53,17 +59,24 @@ const ChatPopUp = ({ userId, show, handleClose }) => {
     scrollToBottom();
   }, [messages]);
 
+  const handleOnClose = () => {
+    setMessage("");
+    setMessages([]);
+    setUsername("");
+    setSelectedUser(null);
+    handleClose();
+  };
+
   return (
     <Modal
       show={show}
-      onHide={handleClose}
+      onHide={handleOnClose}
       centered
       dialogClassName="chat-modal"
     >
       <Navbar bg="dark" variant="dark" className="chat-navbar">
         <Container>
-          {" "}
-          <Navbar.Brand>Dr Yerimah</Navbar.Brand>
+          <Navbar.Brand>{username}</Navbar.Brand>
           <Modal.Header closeButton></Modal.Header>
         </Container>
       </Navbar>
@@ -94,4 +107,4 @@ const ChatPopUp = ({ userId, show, handleClose }) => {
   );
 };
 
-export default ChatPopUp;
+export default AdminChatPopUp;

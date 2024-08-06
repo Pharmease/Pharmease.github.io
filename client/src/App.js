@@ -1,12 +1,16 @@
+import AdminChatMenu from "./AdminChatMenu";
 import Home from "./Home";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <Route exact path="/">
         <Home />
-      </div>
+      </Route>
+      <Route exact path="/*dmin_ch@t">
+        <AdminChatMenu />
+      </Route>
     </Router>
   );
 }
