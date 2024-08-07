@@ -9,7 +9,7 @@ const ChatPopUp = ({ userId, show, handleClose }) => {
   const [username, setUsername] = useState(userId);
   const messagesEndRef = useRef(null);
 
-  const chatNode = `${userId}_${"Lmyt1TnogNOEEvUlGVGHzJ8FCnB3"}`;
+  const chatNode = `${userId}_${"gWloEoWvWKQMcrOjMEXOmpn4O062"}`;
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -44,7 +44,7 @@ const ChatPopUp = ({ userId, show, handleClose }) => {
       text: message,
       timestamp: Date.now(),
       senderId: userId,
-      receiverId: "Lmyt1TnogNOEEvUlGVGHzJ8FCnB3",
+      receiverId: "gWloEoWvWKQMcrOjMEXOmpn4O062",
     });
     setMessage("");
   };

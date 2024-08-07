@@ -6,8 +6,13 @@ import RegisterForm from "./RegisterForm";
 const RegisterPopUp = ({ show, handleClose }) => {
   const [success, setSuccess] = useState(false);
 
+  const handleOnClose = () => {
+    handleClose();
+    setSuccess(false);
+  };
+
   return (
-    <Modal show={show} onHide={handleClose} centered>
+    <Modal show={show} onHide={handleOnClose} centered>
       <Modal.Header closeButton>
         <Modal.Title>Login/Register</Modal.Title>
       </Modal.Header>
@@ -36,7 +41,7 @@ const RegisterPopUp = ({ show, handleClose }) => {
             }}
           >
             <h5>You have Successfully Logged into your Account</h5>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="primary" onClick={handleOnClose}>
               Okay
             </Button>
           </div>

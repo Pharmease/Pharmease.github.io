@@ -28,6 +28,7 @@ const HandleLogin = ({ e, setStates, inputRefs }) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         setStates.setError(errorMessage);
+        console.log(errorMessage)
         setStates.setIsPending(false);
       });
   };
@@ -54,6 +55,7 @@ const HandleLogin = ({ e, setStates, inputRefs }) => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        console.log(errorMessage);
         setStates.setError(errorMessage);
         setStates.setIsPending(false);
       });

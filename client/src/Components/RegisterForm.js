@@ -1,4 +1,4 @@
-import { Form, Button, InputGroup } from "react-bootstrap";
+import { Form, Button, InputGroup, Alert } from "react-bootstrap";
 import { useState, useRef, useHistory } from "react";
 import HandleRegister from "../Functions/HandleRegister";
 
@@ -40,6 +40,7 @@ const RegisterForm = ({ setSuccess }) => {
       className="custom-form"
       onSubmit={(e) => HandleRegister({ e, inputRefs, setStates })}
     >
+      {error && <Alert variant="danger">{error}</Alert>}
       <Form.Group className="mb-3">
         <Form.Label>Full Name</Form.Label>
         <Form.Control
