@@ -22,8 +22,9 @@ const ChatPopUp = ({ userId, show, handleClose }) => {
   const [imageFile, setImageFile] = useState(null);
   const messagesEndRef = useRef(null);
   const storage = getStorage();
+  const adminId = process.env.CHAT_ADMIN_ID;
 
-  const chatNode = `${userId}_${"gWloEoWvWKQMcrOjMEXOmpn4O062"}`;
+  const chatNode = `${userId}_${adminId}`;
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -61,7 +62,7 @@ const ChatPopUp = ({ userId, show, handleClose }) => {
         text: message,
         timestamp: Date.now(),
         senderId: userId,
-        receiverId: "gWloEoWvWKQMcrOjMEXOmpn4O062",
+        receiverId: adminId,
       });
       setMessage("");
     }
@@ -92,7 +93,7 @@ const ChatPopUp = ({ userId, show, handleClose }) => {
             text: downloadURL,
             timestamp: Date.now(),
             senderId: userId,
-            receiverId: "gWloEoWvWKQMcrOjMEXOmpn4O062",
+            receiverId: adminId,
             type: "image",
           });
           setUploading(false);
