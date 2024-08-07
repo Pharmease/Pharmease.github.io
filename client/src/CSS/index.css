@@ -68,40 +68,40 @@ body {
 }
 
 .services {
-  padding: 60px 20px;
-  margin-left: 0;
-  margin-right: 0;
+  padding: 40px 20px;
+  margin: 0;
 }
 
 .services .imgCol {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .services .imgCol img {
   width: 100%;
-  max-width: 500px;
-  max-height: 400px;
-  object-fit: contain;
+  max-width: 350px;
   border-radius: 10px;
+  max-height: 300px;
+  object-fit: contain;
 }
 
 .services .desCol {
-  padding: 40px;
+  padding: 20px;
 }
 
 .services .desCol h2 {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 700;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .services .desCol p {
-  font-size: 18px;
+  font-size: 16px;
   color: #666;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .services .desCol ul {
@@ -110,7 +110,7 @@ body {
 }
 
 .services .desCol ul li {
-  font-size: 18px;
+  font-size: 16px;
   color: #666;
   margin-bottom: 10px;
 }
@@ -118,9 +118,9 @@ body {
 .services button {
   display: block;
   width: fit-content;
-  margin-top: 20px;
-  padding: 15px 30px;
-  font-size: 18px;
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
   font-weight: 700;
   border-radius: 30px;
   transition: transform 0.2s ease;
@@ -207,6 +207,10 @@ body {
     padding: 20px;
   }
 
+  .services .imgCol {
+    margin-bottom: 20px;
+  }
+
   .outerCard {
     flex-direction: column;
     text-align: center;
@@ -223,7 +227,7 @@ body {
   }
 
   .services {
-    padding: 40px 20px;
+    padding: 30px 20px;
   }
 
   .outerCard {
@@ -237,7 +241,12 @@ body {
   }
 
   .services .desCol h2 {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  .services .desCol p,
+  .services .desCol ul li {
+    font-size: 14px;
   }
 
   .outerCard h2 {

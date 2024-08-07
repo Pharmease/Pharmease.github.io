@@ -1,4 +1,4 @@
-import { Modal, Form, Button, Container, Row, Col } from "react-bootstrap";
+import { Modal, Form, Button, } from "react-bootstrap";
 import { useState } from "react";
 
 const DrugOrderPopUp = ({ show, handleClose }) => {
@@ -64,12 +64,12 @@ const DrugOrderPopUp = ({ show, handleClose }) => {
             </Form.Group>
 
             <Form.Group className="mb-3">
-              <Form.Label>WhatsApp Phone Number</Form.Label>
+              <Form.Label>Phone Number</Form.Label>
               <Form.Control
                 name="phoneNo"
                 type="tel"
                 required
-                placeholder="Enter your WhatsApp phone number"
+                placeholder="Enter your phone number"
                 value={formData.phoneNo}
                 onChange={handleChange}
                 disabled={loading}

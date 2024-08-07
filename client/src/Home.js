@@ -52,12 +52,18 @@ const Home = () => {
           </Container>
           <Container style={{ display: "flex", justifyContent: "end" }}>
             {!loggedIn && (
-              <p style={{ cursor: "pointer" }} onClick={handleRegisterShow}>
+              <p
+                style={{ cursor: "pointer", color: "#0000EE" }}
+                onClick={handleRegisterShow}
+              >
                 Login/Register
               </p>
             )}
             {loggedIn && (
-              <p style={{ cursor: "pointer" }} onClick={handleLogOut}>
+              <p
+                style={{ cursor: "pointer", color: "#0000EE" }}
+                onClick={handleLogOut}
+              >
                 Logout
               </p>
             )}
@@ -88,10 +94,10 @@ const Home = () => {
       </Row>
 
       <Row className="services" style={{ backgroundColor: "#F9F2FF" }}>
-        <Col className="imgCol">
+        <Col className="imgCol" xs={12} md={4}>
           <img src="images/download.png" alt="Medication" />
         </Col>
-        <Col className="desCol">
+        <Col className="desCol" xs={12} md={8}>
           <h2>Get medication seamlessly</h2>
           <p>
             We make ordering medication a seamless and quick process. We
@@ -110,10 +116,10 @@ const Home = () => {
         </Col>
       </Row>
       <Row className="services" style={{ backgroundColor: "#e5fffd" }}>
-        <Col className="imgCol">
+        <Col className="imgCol" xs={12} md={4}>
           <img src="images/download.png" alt="Consultation" />
         </Col>
-        <Col className="desCol">
+        <Col className="desCol" xs={12} md={8}>
           <h2>Virtual consultation</h2>
           <p>
             Get medication & supplement recommendations, health advice, and our
@@ -126,18 +132,18 @@ const Home = () => {
             </li>
             <li>Start optimizing your health journey.</li>
           </ul>
-          {loggedIn && (
+          {loggedIn ? (
             <Button variant="primary" onClick={handleChatShow}>
               BOOK A SESSION →
             </Button>
-          )}
-          {!loggedIn && (
+          ) : (
             <Button variant="primary" onClick={handleRegisterShow}>
               BOOK A SESSION →
             </Button>
           )}
         </Col>
       </Row>
+
       <div className="cardContainer">
         <Row className="outerCard">
           <Col className="desCol">
