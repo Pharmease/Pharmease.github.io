@@ -56,6 +56,8 @@ const AdminChatMenu = () => {
 
       if (data) {
         for (const chatId in data) {
+          const adminId = chatId.split("_")[1];
+          if (adminId !== uid) continue;
           const messages = data[chatId].messages;
           const messageKeys = Object.keys(messages);
           const lastMessage = messages[messageKeys[messageKeys.length - 1]];
@@ -66,10 +68,15 @@ const AdminChatMenu = () => {
           onValue(userDetailsRef, (userSnapshot) => {
             const userDetails = userSnapshot.val();
 
+            let lastMessageText = lastMessage.text;
+            if (lastMessage.type === "image") {
+              lastMessageText = "image";
+            }
+
             chatList.push({
               id: chatId,
               name: userDetails.name,
-              lastMessage: lastMessage.text,
+              lastMessage: lastMessageText,
               time: new Date(lastMessage.timestamp).toLocaleTimeString([], {
                 hour: "2-digit",
                 minute: "2-digit",
@@ -83,7 +90,7 @@ const AdminChatMenu = () => {
         }
       }
     });
-  }, [isAdmin]);
+  }, [isAdmin, uid]);
 
   useEffect(() => {
     const filterChats = () => {
@@ -160,7 +167,7 @@ const AdminChatMenu = () => {
           setSelectedUser={setSelectedUser}
           show={chatShow}
           handleClose={handleChatClose}
-        ></AdminChatPopUp>
+        />
       )}
     </Container>
   );

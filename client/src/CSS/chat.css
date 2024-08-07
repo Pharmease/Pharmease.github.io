@@ -43,13 +43,20 @@
   align-items: center;
 }
 
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
 .message-input {
   flex-grow: 1;
   margin-right: 10px;
-  border-radius: 20px;
   padding: 10px;
   border: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
 
 .send-button {
@@ -70,48 +77,90 @@
   background-color: #0d7059;
 }
 
-.chat-message {
+.file-upload-label {
+  cursor: pointer;
+  margin: 10px;
+  margin-right: 20px;
+}
+
+.file-input {
+  display: none;
+}
+
+.image-preview-container {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.image-preview {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.remove-image-button {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  border-radius: 50%;
+  padding: 2px 5px;
+  font-size: 12px;
+}
+
+.upload-progress {
   display: flex;
-  margin-bottom: 10px;
-}
-
-.sent {
-  justify-content: flex-end;
-}
-
-.received {
-  justify-content: flex-start;
-}
-
-.message-bubble {
-  max-width: 60%;
-  border-radius: 20px;
-  padding: 5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.sender {
-  background-color: #dcf8c6;
-  border-top-right-radius: 0;
-}
-
-.receiver {
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
   background-color: white;
-  border-top-left-radius: 0;
 }
 
-.message-timestamp {
-  font-size: 0.75rem;
-  margin-left: 40px;
-  text-align: right;
-  margin-top: 5px;
-  color: #888;
+.image-upload-thumbnail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.message-bubble div {
-  padding: 0;
+.upload-preview {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  object-fit: cover;
+  position: relative;
 }
 
-.message-bubble div p {
-  margin: 0;
+.progress-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+}
+
+.progress-circle-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-circle-svg circle {
+  fill: none;
+  stroke-width: 4;
+  stroke: #128c7e;
+  stroke-dasharray: 176;
+  stroke-dashoffset: 176;
+  transition: stroke-dashoffset 0.3s;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: #128c7e;
 }

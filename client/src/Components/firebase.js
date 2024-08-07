@@ -26,6 +26,7 @@ import {
   uploadBytes,
   ref as storageRef,
   getDownloadURL,
+  uploadBytesResumable,
 } from "firebase/storage";
 
 const firebaseConfig = {
@@ -63,4 +64,5 @@ export {
   uploadBytes,
   storageRef,
   getDownloadURL,
+  uploadBytesResumable,
 };
