@@ -1,0 +1,26 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --host --port 4200",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@placetopay/iconsax-vue": "^1.0.0",
+    "animate.css": "^4.1.1",
+    "notivue": "^2.4.4",
+    "nuxt": "^3.13.0",
+    "nuxt-vuefire": "^1.0.4",
+    "sass": "^1.77.8",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.10"
+  }
+}
